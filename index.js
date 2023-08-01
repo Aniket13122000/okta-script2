@@ -72,38 +72,6 @@ if (environment) {
 var isPaused = false;
 
 
-// const app_list_generator = async (appId) => {
-//     try {
-//       const config = {
-//         method: 'get',
-//         url: `https://${org_url}.${base_url}/api/v1/apps/${appId}/groups`,
-//         headers: {
-//           'Accept': 'application/json',
-//           'Content-Type': 'application/json',
-//           'Authorization': `SSWS ${api_token}`
-//         }
-//       };
-  
-//       const response = await axios.request(config);
-//       let g_ids = [];
-  
-//       if (response.data.length >= 1) {
-//         for (let i = 0; i < response.data.length; i++) {
-//           g_ids.push(response.data[i].id);
-//         }
-  
-//         return {
-//           [appId]: g_ids
-//         };
-//       } else {
-//         return null;
-//       }
-//     } catch (error) {
-//       console.error(`Error processing appId ${appId}: ${error.message}`);
-//       return null;
-//     }
-//   };
-
 const app_list_generator = async (appId) => {
     const maxRetries = 10;
     const retryInterval = 1000; // 1 second (adjust as needed)
